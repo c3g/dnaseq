@@ -1,4 +1,4 @@
-# nf-core/dna: Output
+# c3g/dna: Output
 
 ## Introduction
 
