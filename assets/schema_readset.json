@@ -1,0 +1,80 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://raw.githubusercontent.com/robsyme/dna/master/assets/schema_readset.json",
+    "title": "robsyme/dna pipeline - params.readsets schema",
+    "description": "Schema for the file provided with params.readsets",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "sample": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9-_]+$",
+                "errorMessage": "Sample name mucan only contain letters A-Z, numbers 0-9, hyphens (-) or underscores (_)"
+            },
+            "readset": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9-_]+$",
+                "errorMessage": "Readset name can only contain letters A-Z, numbers 0-9, hyphens (-) or underscores (_)"
+            },
+            "library": {
+                "type": "string",
+                "pattern": "^\\S+$",
+                "errorMessage": "Library name cannot contain spaces"
+            },
+            "runtype": {
+                "type": "string",
+                "pattern": "^(PAIRED_END)|(SINGLE_END)$",
+                "errorMessage": "Run type can only be 'PARIED_END' or 'SINGLE_END'"
+            },
+            "run": {
+                "type": "string",
+                "pattern": "^\\S+$",
+                "errorMessage": "Run name cannot contain spaces"
+            },
+            "lane": {
+                "type": "string",
+                "pattern": "^\\S+$",
+                "errorMessage": "Lane cannot contain spaces"
+            },
+            "adapter1": {
+                "type": "string",
+                "pattern": "^[ACGTNacgtn]+$",
+                "errorMessage": "Adapater 1 sequence can only contain the characters: 'ACGTNacgtn'"
+            },
+            "adapter2": {
+                "type": "string",
+                "pattern": "^[ACGTNacgtn]+$",
+                "errorMessage": "Adapater 1 sequence can only contain the characters: 'ACGTNacgtn'"
+            },
+            "qualityoffset": {
+                "type": "number",
+                "errorMessage": "Quality offset must be a number"
+            },
+            "bedfile": {
+                "type": "string",
+                "pattern": "^\\S+\\.bed$",
+                "errorMessage": "Bed file must have extension '.bed'"
+            },
+            "fastq_1": {
+                "type": "string",
+                "pattern": "^\\S+\\.f(ast)?q\\.gz$",
+                "errorMessage": "FastQ file for reads 1 must be provided, cannot contain spaces and must have extension '.fq.gz' or '.fastq.gz'"
+            },
+            "fastq_2": {
+                "errorMessage": "FastQ file for reads 2 cannot contain spaces and must have extension '.fq.gz' or '.fastq.gz'",
+                "anyOf": [
+                    {
+                        "type": "string",
+                        "pattern": "^\\S+\\.f(ast)?q\\.gz$"
+                    },
+                    {
+                        "type": "string",
+                        "maxLength": 0
+                    }
+                ]
+            }
+        },
+        "required": ["sample", "readset", "runtype", "run", "lane", "fastq_1"]
+    }
+}

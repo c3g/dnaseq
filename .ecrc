@@ -1,0 +1,6 @@
+{
+    "Exclude": [
+        "assets/readsets.*.txt",
+        "README.md"
+    ]
+}
