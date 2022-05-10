@@ -22,10 +22,6 @@
 
 The pipeline is built using [Nextflow](https://www.nextflow.io), a workflow tool to run tasks across multiple compute infrastructures in a very portable manner. It uses Docker/Singularity containers making installation trivial and results highly reproducible. The [Nextflow DSL2](https://www.nextflow.io/docs/latest/dsl2.html) implementation of this pipeline uses one container per process which makes it much easier to maintain and update software dependencies. Where possible, these processes have been submitted to and installed from [nf-core/modules](https://github.com/nf-core/modules) in order to make them available to all nf-core pipelines, and to everyone within the Nextflow community!
 
-<!-- TODO nf-core: Add full-sized test dataset and amend the paragraph below if applicable -->
-
-On release, automated continuous integration tests run the pipeline on a full-sized dataset on the AWS cloud infrastructure. This ensures that the pipeline runs on AWS, has sensible resource allocation defaults set to run on real-world datasets, and permits the persistent storage of results to benchmark between pipeline releases and other analysis sources. The results obtained from the full-sized test can be viewed on the [nf-core website](https://nf-co.re/dna/results).
-
 ## Pipeline summary
 
 <!-- TODO nf-core: Fill in short bullet-pointed list of the default steps in the pipeline -->
@@ -62,21 +58,15 @@ On release, automated continuous integration tests run the pipeline on a full-si
 
 ## Documentation
 
-The c3g/dna pipeline comes with documentation about the pipeline [usage](https://nf-co.re/dna/usage), [parameters](https://nf-co.re/dna/parameters) and [output](https://nf-co.re/dna/output).
+The c3g/dna pipeline comes with documentation about the pipeline [usage](docs/usage.md), and [output](docs/output.md).
 
 ## Credits
 
-c3g/dna was originally written by Rob Syme.
-
-We thank the following people for their extensive assistance in the development of this pipeline:
-
-<!-- TODO nf-core: If applicable, make list of people who have also contributed -->
+The Genpipes DNAseq pipeline was originally written by Mathieu Bourgey, Rob Eveligh, and Edouard Henrion and translated into the c3g/dna Nextflow workflow by Rob Syme,
 
 ## Contributions and Support
 
 If you would like to contribute to this pipeline, please see the [contributing guidelines](.github/CONTRIBUTING.md).
-
-For further information or help, don't hesitate to get in touch on the [Slack `#dna` channel](https://nfcore.slack.com/channels/dna) (you can join with [this invite](https://nf-co.re/join/slack)).
 
 ## Citations
 
@@ -86,6 +76,16 @@ For further information or help, don't hesitate to get in touch on the [Slack `#
 <!-- TODO nf-core: Add bibliography of tools and data used in your pipeline -->
 
 An extensive list of references for the tools used by the pipeline can be found in the [`CITATIONS.md`](CITATIONS.md) file.
+
+The pipeline structure is a translation of the Genpipes DNAseq pipeline.
+
+> **GenPipes: an open-source framework for distributed and scalable genomic analyses**
+>
+> Mathieu Bourgey, Rola Dali, Robert Eveleigh, Kuang Chung Chen, Louis Letourneau, Joel Fillon, Marc Michaud, Maxime Caron, Johanna Sandoval, Francois Lefebvre, Gary Leveque, Eloi Mercier, David Bujold, Pascale Marquis, Patrick Tran Van, David Morais, Julien Tremblay, Xiaojian Shao, Edouard Henrion, Emmanuel Gonzalez, Pierre-Olivier Quirion, Bryan Caron, Guillaume Bourque
+>
+> _GigaScience_ 2019 June. doi: [10.1093/gigascience/giz037](https://dx.doi.org/10.1093/gigascience/giz037).
+
+This pipeline uses code and infrastructure developed and maintained by the [nf-core](https://nf-co.re) community, reused here under the [MIT license](https://github.com/nf-core/tools/blob/master/LICENSE).
 
 You can cite the `nf-core` publication as follows:
 
