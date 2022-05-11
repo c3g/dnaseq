@@ -1,4 +1,4 @@
-Sample	Readset	Library	RunType	Run	Lane	Adapter1	Adapter2	QualityOffset	BED	FASTQ1	FASTQ2	BAM
-sampleA	readset1	lib0001	PAIRED_END	run100	1	AGATCGGAAGAGCACACGTCTGAACTCCAGTCA	AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT	33		https://datahub-554-cv3.p.genap.ca/dnaseq/dnaseq_GM12878_chr19_R1.fastq.gz	https://datahub-554-cv3.p.genap.ca/dnaseq/dnaseq_GM12878_chr19_R2.fastq.gz	
-sampleB	readset3	lib0003	PAIRED_END	run100	1	AGATCGGAAGAGCACACGTCTGAACTCCAGTCA	AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT	33		https://datahub-554-cv3.p.genap.ca/dnaseq/dnaseq_GM12878_chr19_R1.fastq.gz	https://datahub-554-cv3.p.genap.ca/dnaseq/dnaseq_GM12878_chr19_R2.fastq.gz	
-sampleA	readset4	lib0004	PAIRED_END	run100	2	AGATCGGAAGAGCACACGTCTGAACTCCAGTCA	AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT	33				https://datahub-554-cv3.p.genap.ca/dnaseq/dnaseq_GM12878_chr19.bam
+Sample	Readset	Library	RunType	Run	Lane	Adapter1	Adapter2	QualityOffset	BED	BAM	FASTQ1	FASTQ2
+sampleA	readset1	lib0001	PAIRED_END	run100	1	AGATCGGAAGAGCACACGTCTGAACTCCAGTCA	AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT	33			https://datahub-554-cv3.p.genap.ca/dnaseq/dnaseq_GM12878_chr19_R1.fastq.gz	https://datahub-554-cv3.p.genap.ca/dnaseq/dnaseq_GM12878_chr19_R2.fastq.gz
+sampleA	readset2	lib0002	PAIRED_END	run100	1	AGATCGGAAGAGCACACGTCTGAACTCCAGTCA	AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT	33			https://datahub-554-cv3.p.genap.ca/dnaseq/dnaseq_GM12878_chr19_R1.fastq.gz	https://datahub-554-cv3.p.genap.ca/dnaseq/dnaseq_GM12878_chr19_R2.fastq.gz
+sampleB	readset3	lib0003	PAIRED_END	run100	1	AGATCGGAAGAGCACACGTCTGAACTCCAGTCA	AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT	33			https://datahub-554-cv3.p.genap.ca/dnaseq/dnaseq_GM12878_chr19_R1.fastq.gz	https://datahub-554-cv3.p.genap.ca/dnaseq/dnaseq_GM12878_chr19_R2.fastq.gz

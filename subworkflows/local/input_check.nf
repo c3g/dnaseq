@@ -17,9 +17,23 @@ workflow INPUT_CHECK {
             return create_fastq_channel(it)
     }.set { reads }
 
+    fastqs = with_readsets_per_sample(reads.fastqs)
+
     emit:
-    reads = reads.fastqs                   // channel: [ val(meta), [ reads ] ]
+    reads = fastqs                   // channel: [ val(meta), [ reads ] ]
     versions = READSETS_CHECK.out.versions // channel: [ versions.yml ]
+}
+
+def with_readsets_per_sample(chan) {
+    def readsets_per_sample = chan
+    | map { meta, reads -> [meta.sample, reads] }
+    | groupTuple
+    | map { sample, reads -> [sample, [readsets_per_sample:reads.size()]] }
+
+    chan
+    | map { meta, reads -> [meta.sample, meta, reads] }
+    | combine ( readsets_per_sample, by: 0 )
+    | map { sample, meta1, reads, meta2 -> [meta1 + meta2, reads] }
 }
 
 // Function to get list of [ meta, [ fastq_1, fastq_2 ] ]
