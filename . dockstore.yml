@@ -1,0 +1,7 @@
+version: 1.0
+workflows:
+  - subclass: NFL
+    primaryDescriptorPath: nextflow.config
+    authors:
+      - name: Robert Syme
+        email: robert.syme@mcgill.ca
