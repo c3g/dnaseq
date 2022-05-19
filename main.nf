@@ -45,10 +45,6 @@ WorkflowMain.initialise(workflow, params, log)
 
 include { DNA } from './workflows/dna'
 
-workflow GENFLOW_DNA {
-    DNA ()
-}
-
 workflow {
-    GENFLOW_DNA ()
+    DNA()
 }
